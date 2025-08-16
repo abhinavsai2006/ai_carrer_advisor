@@ -49,6 +49,3 @@ This project bridges the **education-to-employment gap** by giving **personalize
 - **PDF Export** – Professionally formatted career report.  
 
 ---
-
-## 🚀 Running the Project
-1. Clone this repository:  

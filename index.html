@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Career & Skills Advisor</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- jsPDF CDN for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="logo">
+                    <h2>AI Career Advisor</h2>
+                </div>
+                <nav class="nav">
+                    <button class="btn btn--secondary btn--sm" id="resetBtn">Reset Assessment</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="progress-container" id="progressContainer" style="display: none;">
+        <div class="container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text" id="progressText">Step 1 of 3: Skills Assessment</div>
+        </div>
+    </div>
+
+    <!-- Landing Page -->
+    <section class="hero" id="landingPage">
+        <div class="container">
+            <div class="hero__content">
+                <h1>Discover Your Perfect Career Path</h1>
+                <p class="hero__subtitle">Get personalized AI-powered career recommendations based on your skills, personality, and interests.</p>
+                <div class="hero__features">
+                    <div class="feature">
+                        <div class="feature__icon">🎯</div>
+                        <h3>Skills Assessment</h3>
+                        <p>Evaluate your technical, soft, and analytical skills</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature__icon">🧠</div>
+                        <h3>Personality Analysis</h3>
+                        <p>Understand your career personality and work preferences</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature__icon">📊</div>
+                        <h3>Career Matching</h3>
+                        <p>Get matched with careers based on AI analysis</p>
+                    </div>
+                </div>
+                <button class="btn btn--primary btn--lg" id="startAssessment">Start Assessment</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Assessment -->
+    <section class="assessment-section hidden" id="skillsAssessment">
+        <div class="container">
+            <div class="assessment__header">
+                <h2>Skills Assessment</h2>
+                <p>Rate your current skill levels across different categories</p>
+            </div>
+            <div class="assessment__content">
+                <div class="skills-grid" id="skillsGrid">
+                    <!-- Skills will be dynamically generated -->
+                </div>
+                <div class="assessment__actions">
+                    <button class="btn btn--primary" id="nextToPersonality" disabled>Continue to Personality Assessment</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personality Assessment -->
+    <section class="assessment-section hidden" id="personalityAssessment">
+        <div class="container">
+            <div class="assessment__header">
+                <h2>Personality Assessment</h2>
+                <p>Help us understand your work style and personality traits</p>
+            </div>
+            <div class="assessment__content">
+                <div class="personality-questions" id="personalityQuestions">
+                    <!-- Questions will be dynamically generated -->
+                </div>
+                <div class="assessment__actions">
+                    <button class="btn btn--secondary" id="backToSkills">Back</button>
+                    <button class="btn btn--primary" id="generateResults" disabled>Generate Career Recommendations</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Dashboard -->
+    <section class="results-section hidden" id="resultsSection">
+        <div class="container">
+            <div class="results__header">
+                <h2>Your Personalized Career Recommendations</h2>
+                <p>Based on your skills and personality assessment</p>
+            </div>
+            
+            <!-- Career Matches -->
+            <div class="results__content">
+                <div class="career-matches" id="careerMatches">
+                    <!-- Career recommendations will be generated -->
+                </div>
+                
+                <!-- Skills Radar Chart -->
+                <div class="skills-analysis">
+                    <h3>Your Skills Profile</h3>
+                    <div class="chart-container" style="position: relative; height: 400px;">
+                        <canvas id="skillsChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Industry Trends -->
+                <div class="industry-trends">
+                    <h3>Industry Growth Trends</h3>
+                    <div class="chart-container" style="position: relative; height: 300px;">
+                        <canvas id="trendsChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="results__actions">
+                    <button class="btn btn--secondary" id="retakeAssessment">Retake Assessment</button>
+                    <button class="btn btn--primary" id="exportResults">Export Results</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Detail Modal -->
+    <div class="modal hidden" id="careerModal">
+        <div class="modal__overlay" id="modalOverlay"></div>
+        <div class="modal__content">
+            <div class="modal__header">
+                <h3 id="modalTitle"></h3>
+                <button class="modal__close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal__body" id="modalBody">
+                <!-- Career details will be populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading hidden" id="loadingSpinner">
+        <div class="loading__spinner"></div>
+        <p>Analyzing your responses...</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

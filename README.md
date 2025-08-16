@@ -1,85 +1,54 @@
-# 🚀 AI-Powered Career & Skills Advisor  
+# 🚀 AI-Powered Career & Skills Advisor
 
-> 🧑‍🎓 Empowering Indian students with **AI-driven career guidance**, **personalized learning paths**, and **market-ready skills development**.  
-This project is inspired by the [Gen AI Google Exchange program](https://prepinsta.com/gen-ai-google-exchange-program/) and designed to address the growing **employability crisis** by bridging the gap between academia & industry.  
+An interactive web application that uses **Google Gemini AI** to generate **personalized career recommendations** based on a user’s **skills** and **personality traits**.  
 
----
-
-## ✨ Why This Project Matters
-- 🎯 Tackles **student employability crisis in India** (70-80% engineering graduates considered unemployable).  
-- 📊 Uses **real job market data** for career recommendations.  
-- 🏆 Similar projects have already won **Google Hackathons**.  
-- 🇮🇳 Aligns with **Viksit Bharat @2047** vision to upskill students.  
+This project provides students and professionals with **data-driven career insights**, salary forecasts, skills gap analysis, and guided learning paths to improve employability.
 
 ---
 
-## 🎨 Core Features
-1. **🔍 Real-time Market Data**  
-   - Analyzes live job postings (LinkedIn, Naukri, Glassdoor APIs).  
-   - Detects trending skills and in-demand job roles.  
+## 📖 About the Project
+The application helps users:
+- 🧑‍💻 **Skills Assessment** – Rate your technical, analytical, and soft skills.  
+- 🧠 **Personality Assessment** – Answer psychology-driven questions to understand work style.  
+- 🤖 **Gemini AI Job Generation** – Fetch 6 trending jobs in India tailored to the user’s profile.  
+- 📊 **Data Visualization** – View demand for top skills (radar chart) and industry trends (bar chart).  
+- 💼 **Career Recommendations** – Explore job descriptions, required skills, salaries, and growth.  
+- 📑 **PDF Report Export** – Download a professional summary of skills, personality, and top careers.  
 
-2. **📚 Personalized Learning Paths**  
-   - AI-curated courses, learning roadmaps & resources.  
-   - Adaptive pathways for different domains (Tech, AgriTech, Healthcare, etc.).  
-
-3. **💰 Salary Prediction**  
-   - ML models to estimate salaries based on role, skills, and region.  
-
-4. **🎤 Interview Prep**  
-   - AI-generated **customized mock interview questions**.  
-   - Real-time feedback on answers using Gemini API.  
+This project bridges the **education-to-employment gap** by giving **personalized, AI-powered insights** instead of static recommendations.
 
 ---
 
-## 🛠️ Tech Stack
-
-**Frontend:**  
-- React.js (Material UI / Tailwind for modern UI)  
-
-**Backend:**  
-- Python + FastAPI  
-- Google Gemini Pro API for NLP & recommendations  
-
-**Database:**  
-- PostgreSQL (user data, jobs, learning paths)  
-- Vector DB: Pinecone (semantic search on job & skill embeddings)  
-
-**AI/ML:**  
-- Google Gemini API for reasoning and feedback  
-- Hugging Face Transformers for embeddings + classification  
-
-**Deployment:**  
-- Google Cloud Run (backend)  
-- Firebase Hosting (frontend + auth)  
+## 🛠️ How to Use
+1. **Start Assessment** → Begin the process with a landing page.  
+2. **Rate Your Skills** → Select your proficiency (1–4) for multiple skill areas.  
+3. **Answer Personality Questions** → Rate yourself on traits like openness, conscientiousness, adaptability, etc.  
+4. **Generate Results** → AI (Gemini) creates **6 job cards** with salary, skills, and industry trends.  
+5. **Explore Careers** →  
+   - Click on a job to see **skills gap analysis** and **recommended learning paths**.  
+   - Check **charts** of top skills and industry demand.  
+6. **Download PDF** → Export your personalized career report.  
+7. **Retake or Reset** → Users can restart the assessment anytime.  
 
 ---
 
-## 📌 Implementation Roadmap (3 Weeks)
-
-**🔹 Week 1 – Setup & Data Pipeline**  
-- Setup React frontend & FastAPI backend  
-- Integrate PostgreSQL + Pinecone  
-- Collect real-time job market data  
-
-**🔹 Week 2 – AI Core Functionality**  
-- AI career recommendations (Gemini API)  
-- Salary prediction ML model  
-- Personalized learning path generator  
-
-**🔹 Week 3 – User Experience & Deployment**  
-- Frontend integration with career dashboard  
-- Interview prep chatbot  
-- Deploy to Google Cloud & Firebase  
+## 📡 Tech Stack
+- **Frontend:** Vanilla JS + HTML + CSS  
+- **Backend (API calls):** Google Gemini API (generativelanguage/v1beta, model: `gemini-2.0-flash`)  
+- **AI/ML:** Gemini generates JSON-formatted job cards and skills insights  
+- **Charts:** Chart.js (Radar & Bar visualization)  
+- **Export:** jsPDF for downloadable reports  
 
 ---
 
-## ⚡ Unique Differentiators
-- ✅ **Real-world Data:** Not static – powered by live job listings.  
-- ✅ **End-to-End Guidance:** From **career discovery → skills roadmap → salary insights → interviews**.  
-- ✅ **India-focused:** Tailored for Indian job market, including government & regional jobs.  
+## 🔑 Key Features in Code
+- **`fetchJobsFromGemini()`** – Calls Gemini API with custom prompts and parses JSON response.  
+- **`CareerAdvisor` Class** – Manages assessments, recommendations, charts, and export.  
+- **Event Listeners** – Interactive flow (skills → personality → results).  
+- **Charts** – Dynamic Radar (Top Skills) & Bar Chart (Industry Trends).  
+- **PDF Export** – Professionally formatted career report.  
 
 ---
 
-## 🚀 Getting Started  
-
-### 📂 Clone Repository
+## 🚀 Running the Project
+1. Clone this repository:  
